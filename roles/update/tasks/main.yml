@@ -1,0 +1,17 @@
+  - name: envia docker-compose
+    template:
+      src: ../templates/docker-compose.j2
+      dest: /usr/local/rocketchat/docker-compose.yml
+
+  - name: prepara docker
+    shell: "service docker restart"
+
+  - name: derruba docker-compose
+    shell: "cd /usr/local/rocketchat && docker-compose down"
+
+  - name: sobe docker-compose
+    shell: "cd /usr/local/rocketchat && docker-compose up -d"
+
+  - name: da permissao para mongo
+    shell: "chown -R 1001:1001 /usr/local/rocketchat/data"
+    

@@ -1,0 +1,26 @@
+############################ variáveis para acesso SSH #########################
+# IP de acesso SSH à maquina
+ansible_host: 45.56.111.51
+# usuário que será usando para fazer acesso SSH
+ansible_ssh_user: root
+# senha do usuário
+ansible_ssh_pass: 'K0bY2bV5T44ZWp#eWuWo'
+# porta de acesso SSH caso seja diferente da padrão (22)
+#ansible_port:
+# senha para virar sudo caso usuário passado não seja sudo
+#ansible_become_pass: 
+
+# chave para acesso SSH caso seja necessário (a chave precisa estar salva localmente na maquina que irá rodar o ansible, passe o caminho até a chave abaixo)
+#ansible_ssh_private_key_file: 
+
+########################### variáveis para role install ##########################
+install: True
+# DNS para criar certificado e configurar nginx.conf (necessário criar no registro.br)
+dns: 'google.com.br'
+
+########################## variáveis para role update ###########################
+update: True
+# ip da instância do rocketchat
+ip: '45.56.111.51'
+# versão do rocketchat
+rc_version: 5.1.0
